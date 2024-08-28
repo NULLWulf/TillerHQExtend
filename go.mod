@@ -2,7 +2,10 @@ module nullwulf.com/tillerhqextender
 
 go 1.23.0
 
-require google.golang.org/api v0.194.0
+require (
+	github.com/joho/godotenv v1.5.1
+	google.golang.org/api v0.194.0
+)
 
 require (
 	cloud.google.com/go/auth v0.9.1 // indirect
