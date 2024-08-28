@@ -14,27 +14,7 @@ import (
 )
 
 func main() {
-	err := godotenv.Load("./.env")
-	if err != nil {
-		log.Fatal("Error loading .env file")
-	}
 
-	credentialsFile := os.Getenv("CREDENTIALS_FILE")
-	if credentialsFile == "" {
-		log.Fatal("CREDENTIALS_FILE environment variable is not set")
-	}
-
-	spreadsheetID := os.Getenv("SPREADSHEET_ID")
-	if spreadsheetID == "" {
-		log.Fatal("SPREADSHEET_ID environment variable is not set")
-	}
-
-	// Initialize Google Sheets API
-	ctx := context.Background()
-	srv, err := sheets.NewService(ctx, option.WithCredentialsFile(credentialsFile), option.WithScopes(sheets.SpreadsheetsScope))
-	if err != nil {
-		log.Fatalf("Unable to initialize Sheets API: %v", err)
-	}
 
 	// Now 'srv' is an authenticated client that can interact with Google Sheets API.
 	// You can use 'srv' to read, write, or perform other operations on Google Sheets.
